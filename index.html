@@ -113,7 +113,6 @@
   </form>
 
   <div id="result"></div>
-
   <!-- 과목 데이터 & 로직 스크립트 -->
   <script>
     // 1. 교과목 데이터 (예시)
@@ -121,64 +120,34 @@
     const COURSES = [
       {
         id: "LIT101",
-        name: "문학 속 캐릭터 만나기",
-        desc: "소설과 시, 웹툰 캐릭터를 함께 읽으며 서사와 캐릭터를 분석하는 수업.",
+        name: "자기발견과소통(윤희진)",
+        desc: "소설과 시, 웹툰 캐릭터다양한 글이나 영상을 통해, 자신에 대한 의구심(나는 누구인가?)과 자신에 대한 존경심(어떻게 기여하며 살 것인가?)에 대해 깊이 생각할 수 있다.",
         koreanLevel: 4,
         difficulty: 3,
-        tags: ["문학", "문화"],
+        tags: ["자기성찰", "문화"],
         targetGrade: [1, 2],
-        majorTypes: ["ani", "game", "etc"]
+        majorTypes: ["ani", "game", "beauty", "food", "etc"]
       },
       {
-        id: "PSY101",
-        name: "더 나은 삶을 위한 심리학",
-        desc: "일상에서 만나는 감정과 대인관계를 심리학 관점에서 이해하는 교양.",
+        id: "LIT102",
+        name: "레퍼런스시리즈_한강(윤희진)",
+        desc: "-",
         koreanLevel: 4,
         difficulty: 2,
-        tags: ["심리"],
-        targetGrade: [1, 2, 3],
+        tags: ["한강","래퍼런스"],
+        targetGrade: [1, 2, 3, 4, 5],
         majorTypes: ["ani", "game", "beauty", "food", "etc"]
       },
       {
-        id: "PSY201",
-        name: "대인관계 심리학",
-        desc: "관계 패턴, 의사소통 스타일을 심층적으로 다루는 심리 교과.",
+        id: "LIT103",
+        name: "처음만나는문화다양성(윤희진)",
+        desc: "-",
         koreanLevel: 5,
         difficulty: 4,
-        tags: ["심리"],
-        targetGrade: [2, 3, 4],
-        majorTypes: ["etc"]
-      },
-      {
-        id: "CUL101",
-        name: "K-컬처로 보는 문화산업",
-        desc: "K-팝, 드라마, 웹툰 등 한류 콘텐츠를 문화산업 관점에서 분석.",
-        koreanLevel: 4,
-        difficulty: 3,
-        tags: ["문화", "경제"],
-        targetGrade: [1, 2, 3],
+        tags: ["문화", "다양성"],
+        targetGrade: [1, 2, 3, 4, 5],
         majorTypes: ["ani", "game", "beauty", "food", "etc"]
       },
-      {
-        id: "ECO101",
-        name: "슬기로운 경제생활",
-        desc: "실생활 사례를 중심으로 소비, 저축, 투자 등 기본 경제 개념을 다루는 수업.",
-        koreanLevel: 4,
-        difficulty: 3,
-        tags: ["경제"],
-        targetGrade: [1, 2],
-        majorTypes: ["etc"]
-      },
-      {
-        id: "DIA101",
-        name: "디아스포라와 문화다양성",
-        desc: "이주, 난민, 재외동포 사례를 통해 문화 혼종성과 정체성을 탐구.",
-        koreanLevel: 5,
-        difficulty: 4,
-        tags: ["다문화", "문화"],
-        targetGrade: [2, 3, 4],
-        majorTypes: ["ani", "game", "etc"]
-      }
     ];
 
     // 2. 설문 제출 이벤트 처리
