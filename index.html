@@ -16,41 +16,99 @@
 
   <form id="survey-form">
     <fieldset>
-      <legend>1. 나의 한국어 수준</legend>
-      <label for="koreanLevel">TOPIK 기준에 가장 가까운 수준을 골라 주세요.</label>
+      <legend>1. 한국어 요구 수준 (종합)</legend>
+      <label for="koreanLevel">전반적인 한국어 수준을 선택해주세요.</label>
       <select name="koreanLevel" id="koreanLevel">
-        <option value="3">3급 전후</option>
-        <option value="4" selected>4급 전후</option>
-        <option value="5">5급 이상</option>
+        <option value="초급">초급</option>
+        <option value="중급A" selected>중급A</option>
+        <option value="중급B">중급B</option>
+        <option value="중고급">중고급</option>
+        <option value="고급">고급</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>2. 전공 계열</legend>
-      <label for="majorType">자신의 전공 계열을 선택해주세요.</label>
-      <select name="majorType" id="majorType">
-        <option value="ani">애니/만화/웹툰</option>
-        <option value="game">게임</option>
-        <option value="beauty">뷰티</option>
-        <option value="food">푸드</option>
-        <option value="etc">기타/통합</option>
+      <legend>2. 듣기 수준</legend>
+      <label for="listening">이 수업에서 요구되는 한국어 듣기 수준은 어느 정도입니까?</label>
+      <select name="listening" id="listening">
+        <option value="1">1 (매우 낮음)</option>
+        <option value="2" selected>2 (낮음)</option>
+        <option value="3">3 (보통)</option>
+        <option value="4">4 (높음)</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>3. 관심 분야 (복수 선택 가능)</legend>
-      <label><input type="checkbox" name="interest" value="문학"> 문학/이야기</label>
-      <label><input type="checkbox" name="interest" value="심리"> 심리/상담</label>
-      <label><input type="checkbox" name="interest" value="경제"> 경제/사회</label>
-      <label><input type="checkbox" name="interest" value="문화"> 문화산업/K-컬처</label>
-      <label><input type="checkbox" name="interest" value="다문화"> 다문화/디아스포라</label>
+      <legend>3. 말하기 수준</legend>
+      <label for="speaking">이 수업에서 요구되는 한국어 말하기 수준은 어느 정도입니까?</label>
+      <select name="speaking" id="speaking">
+        <option value="1">1 (매우 낮음)</option>
+        <option value="2" selected>2 (보통)</option>
+        <option value="3">3 (높음)</option>
+        <option value="4">4 (매우 높음)</option>
+      </select>
     </fieldset>
 
     <fieldset>
-      <legend>4. 수업 난이도 선호</legend>
-      <label><input type="radio" name="difficultyPref" value="easy" checked> 가볍게 듣고 싶어요</label>
-      <label><input type="radio" name="difficultyPref" value="normal"> 적당히 도전하고 싶어요</label>
-      <label><input type="radio" name="difficultyPref" value="hard"> 깊이 있게 공부하고 싶어요</label>
+      <legend>4. 읽기 수준</legend>
+      <label for="reading">이 수업에서 요구되는 한국어 읽기 수준은 어느 정도입니까?</label>
+      <select name="reading" id="reading">
+        <option value="1">1 (매우 낮음)</option>
+        <option value="2" selected>2 (보통)</option>
+        <option value="3">3 (높음)</option>
+        <option value="4">4 (매우 높음)</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. 쓰기 수준</legend>
+      <label for="writing">이 수업에서 요구되는 한국어 쓰기 수준은 어느 정도입니까?</label>
+      <select name="writing" id="writing">
+        <option value="1">1 (매우 낮음)</option>
+        <option value="2" selected>2 (보통)</option>
+        <option value="3">3 (높음)</option>
+        <option value="4">4 (매우 높음)</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. 수업 자료 사전 제공</legend>
+      <label for="materialProvided">수업 자료가 미리 제공되는 것이 필요하신가요?</label>
+      <select name="materialProvided" id="materialProvided">
+        <option value="any">상관없음</option>
+        <option value="Y">네, 필요합니다</option>
+        <option value="N">아니요, 필요없습니다</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. 한국 문화/역사 다루는 정도</legend>
+      <label for="culturalContent">한국 문화나 역사를 다루는 수업을 원하시나요?</label>
+      <select name="culturalContent" id="culturalContent">
+        <option value="any">상관없음</option>
+        <option value="전혀 다루지않음">전혀 다루지 않아도 됨</option>
+        <option value="일부 다룸">일부 다루길 원함</option>
+        <option value="대부분 다룸">대부분 다루길 원함</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. 학생 간 상호작용</legend>
+      <label for="interaction">학생들 간 토론이나 협업이 있는 수업을 원하시나요?</label>
+      <select name="interaction" id="interaction">
+        <option value="any">상관없음</option>
+        <option value="Y">네, 원합니다</option>
+        <option value="N">아니요, 원하지 않습니다</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>9. 관심 분야 (복수 선택 가능)</legend>
+      <label><input type="checkbox" name="interest" value="문화와 표현"> 문화와 표현</label>
+      <label><input type="checkbox" name="interest" value="인간과 윤리"> 인간과 윤리</label>
+      <label><input type="checkbox" name="interest" value="삶과 건강"> 삶과 건강</label>
+      <label><input type="checkbox" name="interest" value="역사와 이론"> 역사와 이론</label>
+      <label><input type="checkbox" name="interest" value="사회와 경제"> 사회와 경제</label>
     </fieldset>
 
     <button type="submit">추천 과목 보기</button>
