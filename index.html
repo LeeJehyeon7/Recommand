@@ -1,121 +1,385 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>리케이온 교양 과목 추천기</title>
+  <title>Course Recommendation System for International Students</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="리케이온 학생을 위한 맞춤 교양 과목 추천 시스템" />
+  <meta name="description" content="Personalized course recommendation system for Lykeion international students" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="header-section">
-    <h1>나에게 맞는 교양 과목 추천</h1>
-    <p class="subtitle">리케이온 유학생을 위한 맞춤형 교양 수업 찾기</p>
-    <span class="header-chip">간단한 설문으로 나에게 어울리는 교양 수업 찾기</span>
+    <div class="header-icon">📚</div>
+    <h1>Find Your Perfect Course</h1>
+    <p class="subtitle">Personalized course recommendations for Lykeion international students</p>
+    <span class="header-chip">🎯 Simple survey to find courses that match your Korean language level</span>
   </div>
 
   <form id="survey-form">
     <fieldset>
-      <legend>1. 한국어 요구 수준 (종합)</legend>
-      <label for="koreanLevel">전반적인 한국어 수준을 선택해주세요.</label>
+      <legend>🌐 1. Overall Korean Language Level</legend>
+      <label for="koreanLevel">Please select your overall Korean language proficiency</label>
       <select name="koreanLevel" id="koreanLevel">
-        <option value="초급">초급</option>
-        <option value="중급A" selected>중급A</option>
-        <option value="중급B">중급B</option>
-        <option value="중고급">중고급</option>
-        <option value="고급">고급</option>
+        <option value="초급">🌱 Beginner (초급)</option>
+        <option value="중급A" selected>📗 Intermediate A (중급A)</option>
+        <option value="중급B">📘 Intermediate B (중급B)</option>
+        <option value="중고급">📙 Upper-Intermediate (중고급)</option>
+        <option value="고급">📕 Advanced (고급)</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>2. 듣기 수준</legend>
-      <label for="listening">이 수업에서 요구되는 한국어 듣기 수준은 어느 정도입니까?</label>
+      <legend>👂 2. Listening Skills</legend>
+      <label for="listening">What level of Korean listening skills are required for this course?</label>
       <select name="listening" id="listening">
-        <option value="1">1 (매우 낮음)</option>
-        <option value="2" selected>2 (낮음)</option>
-        <option value="3">3 (보통)</option>
-        <option value="4">4 (높음)</option>
+        <option value="1">⭐ 1 (Very Low)</option>
+        <option value="2" selected>⭐⭐ 2 (Low)</option>
+        <option value="3">⭐⭐⭐ 3 (Medium)</option>
+        <option value="4">⭐⭐⭐⭐ 4 (High)</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>3. 말하기 수준</legend>
-      <label for="speaking">이 수업에서 요구되는 한국어 말하기 수준은 어느 정도입니까?</label>
+      <legend>💬 3. Speaking Skills</legend>
+      <label for="speaking">What level of Korean speaking skills are required for this course?</label>
       <select name="speaking" id="speaking">
-        <option value="1">1 (매우 낮음)</option>
-        <option value="2" selected>2 (보통)</option>
-        <option value="3">3 (높음)</option>
-        <option value="4">4 (매우 높음)</option>
+        <option value="1">⭐ 1 (Very Low)</option>
+        <option value="2" selected>⭐⭐ 2 (Medium)</option>
+        <option value="3">⭐⭐⭐ 3 (High)</option>
+        <option value="4">⭐⭐⭐⭐ 4 (Very High)</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>4. 읽기 수준</legend>
-      <label for="reading">이 수업에서 요구되는 한국어 읽기 수준은 어느 정도입니까?</label>
+      <legend>📖 4. Reading Skills</legend>
+      <label for="reading">What level of Korean reading skills are required for this course?</label>
       <select name="reading" id="reading">
-        <option value="1">1 (매우 낮음)</option>
-        <option value="2" selected>2 (보통)</option>
-        <option value="3">3 (높음)</option>
-        <option value="4">4 (매우 높음)</option>
+        <option value="1">⭐ 1 (Very Low)</option>
+        <option value="2" selected>⭐⭐ 2 (Medium)</option>
+        <option value="3">⭐⭐⭐ 3 (High)</option>
+        <option value="4">⭐⭐⭐⭐ 4 (Very High)</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>5. 쓰기 수준</legend>
-      <label for="writing">이 수업에서 요구되는 한국어 쓰기 수준은 어느 정도입니까?</label>
+      <legend>✍️ 5. Writing Skills</legend>
+      <label for="writing">What level of Korean writing skills are required for this course?</label>
       <select name="writing" id="writing">
-        <option value="1">1 (매우 낮음)</option>
-        <option value="2" selected>2 (보통)</option>
-        <option value="3">3 (높음)</option>
-        <option value="4">4 (매우 높음)</option>
+        <option value="1">⭐ 1 (Very Low)</option>
+        <option value="2" selected>⭐⭐ 2 (Medium)</option>
+        <option value="3">⭐⭐⭐ 3 (High)</option>
+        <option value="4">⭐⭐⭐⭐ 4 (Very High)</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>6. 수업 자료 사전 제공</legend>
-      <label for="materialProvided">수업 자료가 미리 제공되는 것이 필요하신가요?</label>
+      <legend>📄 6. Course Materials Provided in Advance</legend>
+      <label for="materialProvided">Do you need course materials provided in advance?</label>
       <select name="materialProvided" id="materialProvided">
-        <option value="any">상관없음</option>
-        <option value="Y">네, 필요합니다</option>
-        <option value="N">아니요, 필요없습니다</option>
+        <option value="any">🤷 Either is fine</option>
+        <option value="Y">✅ Yes, I need them</option>
+        <option value="N">❌ No, I don't need them</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>7. 한국 문화/역사 다루는 정도</legend>
-      <label for="culturalContent">한국 문화나 역사를 다루는 수업을 원하시나요?</label>
+      <legend>🇰🇷 7. Korean Culture/History Content</legend>
+      <label for="culturalContent">Would you like a course that covers Korean culture or history?</label>
       <select name="culturalContent" id="culturalContent">
-        <option value="any">상관없음</option>
-        <option value="전혀 다루지않음">전혀 다루지 않아도 됨</option>
-        <option value="일부 다룸">일부 다루길 원함</option>
-        <option value="대부분 다룸">대부분 다루길 원함</option>
+        <option value="any">🤷 Either is fine</option>
+        <option value="전혀 다루지않음">🌍 No cultural content needed</option>
+        <option value="일부 다룸">🏯 Some cultural content</option>
+        <option value="대부분 다룸">🎎 Mostly cultural content</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>8. 학생 간 상호작용</legend>
-      <label for="interaction">학생들 간 토론이나 협업이 있는 수업을 원하시나요?</label>
+      <legend>👥 8. Student Interaction</legend>
+      <label for="interaction">Would you like a course with discussions or group work?</label>
       <select name="interaction" id="interaction">
-        <option value="any">상관없음</option>
-        <option value="Y">네, 원합니다</option>
-        <option value="N">아니요, 원하지 않습니다</option>
+        <option value="any">🤷 Either is fine</option>
+        <option value="Y">👫 Yes, I'd like interaction</option>
+        <option value="N">🧘 No, I prefer independent work</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend>9. 관심 분야 (복수 선택 가능)</legend>
-      <label><input type="checkbox" name="interest" value="문화와 표현"> 문화와 표현</label>
-      <label><input type="checkbox" name="interest" value="인간과 윤리"> 인간과 윤리</label>
-      <label><input type="checkbox" name="interest" value="삶과 건강"> 삶과 건강</label>
-      <label><input type="checkbox" name="interest" value="역사와 이론"> 역사와 이론</label>
-      <label><input type="checkbox" name="interest" value="사회와 경제"> 사회와 경제</label>
+      <legend>🎨 9. Areas of Interest (Multiple selection allowed)</legend>
+      <label><input type="checkbox" name="interest" value="문화와 표현"> 🎭 Culture & Expression</label>
+      <label><input type="checkbox" name="interest" value="인간과 윤리"> 🤔 Human & Ethics</label>
+      <label><input type="checkbox" name="interest" value="삶과 건강"> 💪 Life & Health</label>
+      <label><input type="checkbox" name="interest" value="역사와 이론"> 📜 History & Theory</label>
+      <label><input type="checkbox" name="interest" value="사회와 경제"> 💼 Society & Economy</label>
     </fieldset>
 
-    <button type="submit">추천 과목 보기</button>
+    <button type="submit">🔍 Find My Perfect Courses</button>
   </form>
 
   <div id="result"></div>
 
-  <script src="app.js"></script>
+  <script>
+    // ========================================
+    // EMBEDDED COURSE DATA
+    // ========================================
+    const COURSES = [
+      { NO: "1", category: "문화와 표현", name: "리얼리스틱글쓰기", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "N", professor: "윤희진" },
+      { NO: "2", category: "문화와 표현", name: "일본애니메이션체험", koreanLevel: "중급A", listening: "1", speaking: "3", reading: "2", writing: "1", materialProvided: "N", culturalContent: "일부 다룸", interaction: "N", professor: "김이슬" },
+      { NO: "3", category: "인간과 윤리", name: "보건의료윤리론", koreanLevel: "중급B", listening: "2", speaking: "3", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "4", category: "인간과 윤리", name: "치유스토리텔링실습", koreanLevel: "중급B", listening: "3", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "5", category: "인간과 윤리", name: "미디어텍스트와비판적심리론", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "1", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "이민수" },
+      { NO: "6", category: "삶과 건강", name: "생명과책임윤리", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "7", category: "역사와 이론", name: "헤밀턴부터경제까지", koreanLevel: "중급B", listening: "3", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "N", professor: "김현화" },
+      { NO: "8", category: "문화와 표현", name: "종이접기만들기", koreanLevel: "중급B", listening: "3", speaking: "2", reading: "2", writing: "2", materialProvided: "N", culturalContent: "일부 다룸", interaction: "N", professor: "박민" },
+      { NO: "9", category: "인간과 윤리", name: "보건의료윤리론", koreanLevel: "중급B", listening: "2", speaking: "3", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "10", category: "삶과 건강", name: "알고리즘스토리", koreanLevel: "중급A", listening: "3", speaking: "2", reading: "1", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "김현진" },
+      { NO: "11", category: "인간과 윤리", name: "래퍼런스시리즈_한강", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "1", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "12", category: "인간과 윤리", name: "래퍼런스시리즈_무라카미하루키", koreanLevel: "중고급", listening: "4", speaking: "2", reading: "3", writing: "2", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "13", category: "인간과 윤리", name: "자기발견과소통", koreanLevel: "중급B", listening: "2", speaking: "2", reading: "3", writing: "2", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "14", category: "인간과 윤리/역사와 이론", name: "책읽기와생각나누기", koreanLevel: "고급", listening: "4", speaking: "4", reading: "3", writing: "3", materialProvided: "N", culturalContent: "대부분 다룸", interaction: "N", professor: "윤희진" },
+      { NO: "15", category: "인간과 윤리", name: "자기발견과소통", koreanLevel: "중급B", listening: "2", speaking: "2", reading: "2", writing: "3", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "N", professor: "윤희진" },
+      { NO: "16", category: "문화와 표현", name: "혼자라도괜찮은일본문화기행", koreanLevel: "초급", listening: "2", speaking: "1", reading: "1", writing: "2", materialProvided: "N", culturalContent: "일부 다룸", interaction: "Y", professor: "김재용" },
+      { NO: "17", category: "인간과 윤리", name: "생명과책임윤리", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "김현화" },
+      { NO: "18", category: "삶과 건강", name: "신비한몸신기한몸", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "김현화" },
+      { NO: "19", category: "문화와 표현", name: "세창", koreanLevel: "초급", listening: "2", speaking: "1", reading: "1", writing: "1", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "20", category: "문화와 표현", name: "영화를통해보는중급한국어", koreanLevel: "중급A", listening: "2", speaking: "1", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "Y", professor: "김기림" },
+      { NO: "21", category: "사회와 경제", name: "우리시대의독서론", koreanLevel: "고급", listening: "4", speaking: "4", reading: "2", writing: "3", materialProvided: "N", culturalContent: "대부분 다룸", interaction: "N", professor: "윤희진" },
+      { NO: "22", category: "인간과 윤리", name: "독서캐릭터만들기", koreanLevel: "중고급", listening: "4", speaking: "3", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "23", category: "문화와 표현", name: "CK_TED Talks", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "Y", professor: "김재용" },
+      { NO: "24", category: "인간과 윤리/문화와 표현", name: "창의성과소셜미디어", koreanLevel: "중고급", listening: "3", speaking: "3", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "25", category: "사회와 경제", name: "문화예술과동아시아인문학", koreanLevel: "중고급", listening: "3", speaking: "3", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "N", professor: "홍성진" },
+      { NO: "26", category: "인간과 윤리", name: "창의성과독서토론", koreanLevel: "중고급", listening: "3", speaking: "2", reading: "3", writing: "3", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김영" },
+      { NO: "27", category: "삶과 건강", name: "생명과책임윤리", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "N", professor: "박민" },
+      { NO: "28", category: "사회와 경제", name: "함께읽는마틴이야기", koreanLevel: "중급B", listening: "3", speaking: "1", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "N", professor: "김호진" },
+      { NO: "29", category: "인간과 윤리", name: "창의성과비판적글쓰기", koreanLevel: "중고급", listening: "4", speaking: "2", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "30", category: "문화와 표현", name: "영화읽기문화읽기", koreanLevel: "중급B", listening: "2", speaking: "1", reading: "2", writing: "1", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "31", category: "문화와 표현", name: "문화와세계속인물보기", koreanLevel: "중고급", listening: "3", speaking: "2", reading: "3", writing: "3", materialProvided: "N", culturalContent: "일부 다룸", interaction: "N", professor: "윤희진" },
+      { NO: "32", category: "문화와 표현", name: "치유스토리텔링실습", koreanLevel: "중급B", listening: "3", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김소영" },
+      { NO: "33", category: "문화와 표현", name: "영화와속으로", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "N", culturalContent: "일부 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "34", category: "사회와 경제", name: "래퍼런스시리즈_나폴레옹", koreanLevel: "중고급", listening: "4", speaking: "2", reading: "3", writing: "2", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김동진" },
+      { NO: "35", category: "문화와 표현", name: "래퍼런스시리즈_워터쉽다운", koreanLevel: "중급A", listening: "2", speaking: "1", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "N", professor: "정민수" },
+      { NO: "36", category: "사회와 경제", name: "래퍼런스시리즈_한강론", koreanLevel: "중고급", listening: "4", speaking: "2", reading: "3", writing: "2", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김동진" },
+      { NO: "37", category: "인간과 윤리", name: "공감의역사", koreanLevel: "고급", listening: "4", speaking: "3", reading: "3", writing: "3", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김동진" },
+      { NO: "38", category: "인간과 윤리", name: "영화텍스트스토리", koreanLevel: "중급B", listening: "3", speaking: "2", reading: "2", writing: "2", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김동진" },
+      { NO: "39", category: "삶과 건강", name: "신체활동과건강심리학", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "김현진" },
+      { NO: "40", category: "삶과 건강", name: "신체활동과건강심리학", koreanLevel: "초급", listening: "2", speaking: "1", reading: "1", writing: "1", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "김현진" },
+      { NO: "41", category: "인간과 윤리", name: "래퍼런스시리즈_그랜드일루전인간", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "N", culturalContent: "일부 다룸", interaction: "Y", professor: "김재용" },
+      { NO: "42", category: "역사와 이론", name: "동북아시아근현대사", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "N", professor: "김현화" },
+      { NO: "43", category: "문화와 표현", name: "스토리텔링창작론", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "N", culturalContent: "일부 다룸", interaction: "N", professor: "윤희진" },
+      { NO: "44", category: "문화와 표현", name: "영화와속으로", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "N", professor: "정민수" },
+      { NO: "45", category: "삶과 건강", name: "스토리리로배우는자기관리", koreanLevel: "초급", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "N", culturalContent: "일부 다룸", interaction: "Y", professor: "김현진" },
+      { NO: "46", category: "인간과 윤리", name: "캐릭터분석과자기이해", koreanLevel: "중급B", listening: "3", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "47", category: "인간과 윤리", name: "창의성쓰기", koreanLevel: "고급", listening: "3", speaking: "3", reading: "3", writing: "3", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "48", category: "인간과 윤리", name: "래퍼런스시리즈_한강", koreanLevel: "중급B", listening: "2", speaking: "2", reading: "3", writing: "2", materialProvided: "N", culturalContent: "대부분 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "49", category: "인간과 윤리", name: "래퍼런스시리즈_그린마일즈", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "Y", professor: "윤희진" },
+      { NO: "50", category: "문화와 표현", name: "처음만나는문화다양성", koreanLevel: "중급A", listening: "2", speaking: "2", reading: "2", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "Y", professor: "윤희진" },
+      { NO: "51", category: "사회와 경제", name: "한국어로동아시아인문학", koreanLevel: "고급", listening: "3", speaking: "3", reading: "3", writing: "3", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "Y", professor: "윤희진" }
+    ];
+
+    // ========================================
+    // RECOMMENDATION LOGIC
+    // ========================================
+    function getRecommendedCourses(answer) {
+      const {
+        koreanLevel, listening, speaking, reading, writing,
+        materialProvided, culturalContent, interaction, interests
+      } = answer;
+
+      const WEIGHTS = {
+        KOREAN_LEVEL_MATCH: 10,
+        SKILL_MATCH: 3,
+        MATERIAL_MATCH: 2,
+        CULTURAL_MATCH: 2,
+        INTERACTION_MATCH: 2,
+        INTEREST_MATCH: 5
+      };
+
+      const MAX_RESULTS = 10;
+      const levelOrder = ['초급', '중급A', '중급B', '중고급', '고급'];
+
+      return COURSES
+        .map(course => {
+          let score = 0;
+
+          const userLevelIndex = levelOrder.indexOf(koreanLevel);
+          const courseLevelIndex = levelOrder.indexOf(course.koreanLevel);
+
+          if (courseLevelIndex <= userLevelIndex) {
+            score += WEIGHTS.KOREAN_LEVEL_MATCH * (1 + (userLevelIndex - courseLevelIndex) * 0.2);
+          } else if (courseLevelIndex - userLevelIndex === 1) {
+            score += WEIGHTS.KOREAN_LEVEL_MATCH * 0.5;
+          } else {
+            return null;
+          }
+
+          const courseListening = parseInt(course.listening, 10);
+          const courseSpeaking = parseInt(course.speaking, 10);
+          const courseReading = parseInt(course.reading, 10);
+          const courseWriting = parseInt(course.writing, 10);
+
+          if (listening >= courseListening) score += WEIGHTS.SKILL_MATCH * (1 + (listening - courseListening) * 0.3);
+          if (speaking >= courseSpeaking) score += WEIGHTS.SKILL_MATCH * (1 + (speaking - courseSpeaking) * 0.3);
+          if (reading >= courseReading) score += WEIGHTS.SKILL_MATCH * (1 + (reading - courseReading) * 0.3);
+          if (writing >= courseWriting) score += WEIGHTS.SKILL_MATCH * (1 + (writing - courseWriting) * 0.3);
+
+          if (materialProvided === 'any' || materialProvided === course.materialProvided) {
+            score += WEIGHTS.MATERIAL_MATCH;
+          }
+
+          if (culturalContent === 'any' || culturalContent === course.culturalContent) {
+            score += WEIGHTS.CULTURAL_MATCH;
+          }
+
+          if (interaction === 'any' || interaction === course.interaction) {
+            score += WEIGHTS.INTERACTION_MATCH;
+          }
+
+          if (interests.length > 0 && interests.includes(course.category)) {
+            score += WEIGHTS.INTEREST_MATCH;
+          } else if (interests.length === 0) {
+            score += 1;
+          }
+
+          return { course, score };
+        })
+        .filter(item => item !== null)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, MAX_RESULTS);
+    }
+
+    // ========================================
+    // UI RENDERING
+    // ========================================
+    function renderResult(answers, recommended) {
+      const resultDiv = document.getElementById("result");
+
+      if (recommended.length === 0) {
+        resultDiv.innerHTML = `
+          <h2>🔍 Recommendation Results</h2>
+          <p>We couldn't find courses that perfectly match your criteria. Please try adjusting your Korean language level or other preferences.</p>
+        `;
+        return;
+      }
+
+      const categoryIcons = {
+        "문화와 표현": "🎭",
+        "인간과 윤리": "🤔",
+        "삶과 건강": "💪",
+        "역사와 이론": "📜",
+        "사회와 경제": "💼"
+      };
+
+      const itemsHtml = recommended.map((item, index) => {
+        const c = item.course;
+        const rank = index + 1;
+        const categoryIcon = categoryIcons[c.category.split('/')[0]] || "📚";
+
+        return `
+          <div class="course-card">
+            <div class="course-header">
+              <span class="rank-badge">#${rank}</span>
+              <div class="course-title-section">
+                <h3 class="course-name">${c.name}</h3>
+                <div class="course-meta">
+                  <span class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    ${c.professor}
+                  </span>
+                  <span class="meta-item">
+                    ${categoryIcon} ${c.category}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-details">
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <span class="detail-label">🌐 Korean Level</span>
+                  <span class="detail-value">${c.koreanLevel}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">👂 Listening</span>
+                  <span class="detail-value">${'⭐'.repeat(parseInt(c.listening))}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">💬 Speaking</span>
+                  <span class="detail-value">${'⭐'.repeat(parseInt(c.speaking))}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">📖 Reading</span>
+                  <span class="detail-value">${'⭐'.repeat(parseInt(c.reading))}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">✍️ Writing</span>
+                  <span class="detail-value">${'⭐'.repeat(parseInt(c.writing))}</span>
+                </div>
+              </div>
+
+              <div class="feature-tags">
+                ${c.materialProvided === 'Y' ? '<span class="feature-tag">📄 Materials Provided</span>' : ''}
+                ${c.culturalContent !== '전혀 다루지않음' ? `<span class="feature-tag">🇰🇷 ${c.culturalContent}</span>` : ''}
+                ${c.interaction === 'Y' ? '<span class="feature-tag">👥 Group Work</span>' : ''}
+              </div>
+
+              <div class="score-section">
+                <span class="score-label">Match Score</span>
+                <span class="score-value">${Math.round(item.score)} points</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      resultDiv.innerHTML = `
+        <h2>✨ Recommended Courses for You</h2>
+        <p class="result-summary">We found <strong>${recommended.length} courses</strong> that match your preferences!</p>
+        ${itemsHtml}
+      `;
+    }
+
+    // ========================================
+    // FORM HANDLING
+    // ========================================
+    function initializeSurveyForm() {
+      const form = document.getElementById("survey-form");
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const koreanLevel = form.koreanLevel.value;
+        const listening = parseInt(form.listening.value, 10);
+        const speaking = parseInt(form.speaking.value, 10);
+        const reading = parseInt(form.reading.value, 10);
+        const writing = parseInt(form.writing.value, 10);
+        const materialProvided = form.materialProvided.value;
+        const culturalContent = form.culturalContent.value;
+        const interaction = form.interaction.value;
+
+        const interestNodes = form.querySelectorAll('input[name="interest"]:checked');
+        const interests = Array.from(interestNodes).map(i => i.value);
+
+        const answers = {
+          koreanLevel, listening, speaking, reading, writing,
+          materialProvided, culturalContent, interaction, interests
+        };
+
+        const recommended = getRecommendedCourses(answers);
+        renderResult(answers, recommended);
+
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // ========================================
+    // INITIALIZATION
+    // ========================================
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeSurveyForm();
+      console.log(`✅ ${COURSES.length} courses loaded successfully!`);
+    });
+  </script>
 </body>
 </html>
