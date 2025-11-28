@@ -257,14 +257,12 @@
       };
 
       const itemsHtml = recommended.map((course, index) => {
-        const rank = index + 1;
         const field = CATEGORY_TO_FIELD[course.category] || course.category;
         const fieldIcon = fieldIcons[field] || "📚";
 
         return `
           <div class="course-card">
             <div class="course-header">
-              <span class="rank-badge">${rank}</span>
               <div class="course-title-section">
                 <h3 class="course-name">${course.name}</h3>
                 <div class="course-meta">
@@ -282,10 +280,18 @@
               <div class="detail-grid">
                 <div class="detail-item">
                   <span class="detail-label">한국어 수준</span>
-                  <span class="detail-value">${course.koreanLevel}</span>
+                  <span class="detail-value">
+                    ${course.koreanLevel}
+                    <div class="skill-levels">
+                      <span class="skill-item">👂 듣기 ${course.listening}</span>
+                      <span class="skill-item">💬 말하기 ${course.speaking}</span>
+                      <span class="skill-item">📖 읽기 ${course.reading}</span>
+                      <span class="skill-item">✍️ 쓰기 ${course.writing}</span>
+                    </div>
+                  </span>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">상호작용</span>
+                  <span class="detail-label">학생간 상호작용</span>
                   <span class="detail-value">${course.interaction === 'Y' ? '있음' : '없음'}</span>
                 </div>
                 <div class="detail-item">
@@ -302,35 +308,16 @@
         <div class="result-header">
           <h2>✨ 추천 과목</h2>
           <p class="result-summary">총 <strong>${recommended.length}개</strong>의 과목이 추천되었습니다.</p>
-          <div class="action-buttons">
-            <button id="downloadBtn" class="download-btn">💾 결과 저장 (TXT)</button>
-            ${GOOGLE_SCRIPT_URL ? '<span class="save-indicator" id="saveIndicator">📊 온라인 저장 중...</span>' : ''}
-          </div>
         </div>
         ${itemsHtml}
       `;
 
-      // Google Sheets에 자동 저장 (URL이 설정된 경우)
+      // Google Sheets에 자동 저장 (URL이 설정된 경우, 백그라운드에서 조용히 실행)
       if (GOOGLE_SCRIPT_URL) {
-        saveToGoogleSheets(answers, recommended).then(success => {
-          const indicator = document.getElementById('saveIndicator');
-          if (indicator) {
-            indicator.textContent = '✅ 온라인 저장 완료';
-            indicator.style.color = '#10b981';
-          }
-        }).catch(error => {
-          const indicator = document.getElementById('saveIndicator');
-          if (indicator) {
-            indicator.textContent = '⚠️ 온라인 저장 실패 (로컬 저장만 가능)';
-            indicator.style.color = '#f59e0b';
-          }
+        saveToGoogleSheets(answers, recommended).catch(error => {
+          console.error('Google Sheets 저장 실패:', error);
         });
       }
-
-      // 다운로드 버튼 이벤트
-      document.getElementById('downloadBtn').addEventListener('click', () => {
-        downloadResultAsText(answers, recommended);
-      });
     }
 
     // ========================================
