@@ -28,7 +28,7 @@
             <option value="공연예술 스쿨">🎭 공연예술 스쿨</option>
             <option value="만화콘텐츠 스쿨">📚 만화콘텐츠 스쿨</option>
             <option value="애니메이션 스쿨">🎬 애니메이션 스쿨</option>
-            <option value="융합콘텐츠 스쿨">🔄 융합콘텐츠 스쿨</option>
+            <option value="융합콘텐츠 스쿨">✨ 융합콘텐츠 스쿨</option>
             <option value="패션뷰티스타일 스쿨">💄 패션뷰티스타일 스쿨</option>
             <option value="푸드 스쿨">🍴 푸드 스쿨</option>
           </select>
@@ -55,14 +55,7 @@
           <input type="radio" name="koreanLevel" value="TOPIK4급(중급A)" checked>
           <span class="radio-custom radio-custom-twoline">
             <span class="radio-grade">📗 TOPIK4급</span>
-            <span class="radio-level">(중급A)</span>
-          </span>
-        </label>
-        <label class="radio-label">
-          <input type="radio" name="koreanLevel" value="TOPIK4급(중급B)">
-          <span class="radio-custom radio-custom-twoline">
-            <span class="radio-grade">📘 TOPIK4급</span>
-            <span class="radio-level">(중급B)</span>
+            <span class="radio-level">(중급)</span>
           </span>
         </label>
         <label class="radio-label">
@@ -172,7 +165,7 @@
       { NO: "25", category: "사회와 세상", name: "슬기로운경제생활", koreanLevel: "TOPIK5급(중고급)", listening: "3", speaking: "3", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "N", professor: "홍명헌", description: "금융을 모르면 경제생활이 어려워진다. 보다 풍요로운 인생을 위한 첫걸음 수업", url: "https://cafe.naver.com/ckhive/34839", teachingMethod: "이론, 체험" },
       { NO: "26", category: "인간과 가치", name: "창작자를위한인문학", koreanLevel: "TOPIK5급(중고급)", listening: "3", speaking: "2", reading: "3", writing: "3", materialProvided: "Y", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김영", description: "스토리텔링을 통한 넓고 얕은 인문학 속성 과정", url: "https://cafe.naver.com/ckhive/34804", teachingMethod: "이론" },
       { NO: "27", category: "삶과 건강", name: "몸마음챙김명상", koreanLevel: "TOPIK3급(초급)", listening: "2", speaking: "2", reading: "1", writing: "1", materialProvided: "N", culturalContent: "전혀 다루지않음", interaction: "N", professor: "김현", description: "다양한 마음챙김 기법(몀상, 요가, 바디스캔)을 통해 자신의 몸과 마음을 알아차리고 조절하는 방법을 찾아가는 수업", url: "https://cafe.naver.com/ckhive/34840", teachingMethod: "체험" },
-      { NO: "28", category: "사회와 세상", name: "재미있는법이야기", koreanLevel: "TOPIK4급(중급B)", listening: "3", speaking: "1", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "N", professor: "임호균 ", description: "알아두면 동무되는 생활밀착형 법률 수업 청년을 위한 생존형 실전법률 가이드", url: "https://cafe.naver.com/ckhive/34805", teachingMethod: "이론" },
+      { NO: "28", category: "사회와 세상", name: "재미있는법이야기", koreanLevel: "TOPIK4급(중급B)", listening: "3", speaking: "1", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "N", professor: "임호균 ", description: "알아두면 도움되는 생활밀착형 법률 수업 청년을 위한 생존형 실전법률 가이드", url: "https://cafe.naver.com/ckhive/34805", teachingMethod: "이론" },
       { NO: "29", category: "인간과 가치", name: "창작자를위한꿈작업", koreanLevel: "TOPIK5급(중고급)", listening: "4", speaking: "2", reading: "3", writing: "2", materialProvided: "Y", culturalContent: "일부 다룸", interaction: "Y", professor: "강경희", description: "매일 밤 꾸는 꿈을 서로 나누고 꿈으로 상상놀이를 하면서 자신과 세계에 대한 새로운 통찰과 창작에 대한 영감을 얻는 수업", url: "https://cafe.naver.com/ckhive/34835", teachingMethod: "이론, 팀활동, 체험" },
       { NO: "30", category: "문화와 표현", name: "동양요괴대백과", koreanLevel: "TOPIK4급(중급B)", listening: "2", speaking: "1", reading: "2", writing: "1", materialProvided: "Y", culturalContent: "대부분 다룸", interaction: "Y", professor: "오윤형", description: "한중일의 미술사와 다양한 요괴 이야기를 통해 시대와 인간의 내면세계를 들여다보는 상상력 탐구 수업", url: "https://cafe.naver.com/ckhive/34818", teachingMethod: "이론" },
       { NO: "31", category: "문화와 표현", name: "예술,인문학으로보다", koreanLevel: "TOPIK5급(중고급)", listening: "3", speaking: "2", reading: "3", writing: "3", materialProvided: "N", culturalContent: "일부 다룸", interaction: "N", professor: "오윤형", description: "서양미술사를 개괄하면서 작품을 통해 인간과 시대를 이야기하는 인문학적 감상 수업", url: "https://cafe.naver.com/ckhive/34810", teachingMethod: "이론" },
@@ -214,8 +207,7 @@
     // ========================================
     const KOREAN_LEVEL_FILTER = {
       "TOPIK3급(초급)": ["TOPIK3급(초급)", "TOPIK4급(중급A)"],
-      "TOPIK4급(중급A)": ["TOPIK3급(초급)", "TOPIK4급(중급A)", "TOPIK4급(중급B)"],
-      "TOPIK4급(중급B)": ["TOPIK3급(초급)", "TOPIK4급(중급A)", "TOPIK4급(중급B)", "TOPIK5급(중고급)"],
+      "TOPIK4급(중급)": ["TOPIK3급(초급)", "TOPIK4급(중급A)", "TOPIK4급(중급B)", "TOPIK5급(중고급)"],
       "TOPIK5급(중고급)": ["TOPIK3급(초급)", "TOPIK4급(중급A)", "TOPIK4급(중급B)", "TOPIK5급(중고급)"],
       "TOPIK6급(고급)": ["TOPIK3급(초급)", "TOPIK4급(중급A)", "TOPIK4급(중급B)", "TOPIK5급(중고급)", "TOPIK6급(고급)"]
     };
@@ -347,7 +339,7 @@
                 </div>
                 <div class="detail-item">
                   <span class="detail-label">학생간 상호작용</span>
-                  <span class="detail-value">${course.interaction === 'Y' ? '있음' : '없음'}</span>
+                  <span class="detail-value">${course.interaction === 'Y' ? '많음' : '적음'}</span>
                 </div>
                 <div class="detail-item">
                   <span class="detail-label">자료 사전제공</span>
