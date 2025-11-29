@@ -135,7 +135,7 @@
     // ========================================
     // Google Apps Script 웹 앱 URL을 여기에 입력하세요
     // 설정 방법은 google-apps-script.js 파일 참고
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnXMT0GsAg9I2X6vImpf83dkaKnIwhKrUohPXt7Qpzzj8PyydJTP8GW3a3d9yLhwgHVw/exec'; // 예: 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrNIzK84auOKqR8zP43Ncka5O3cdGFLAmnqUDXLA0n-FeylzfPftUyn4kWbr2eCwGT/exec'; // 예: 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'
 
     // ========================================
     // 과목 데이터 (임베디드)
@@ -403,6 +403,22 @@
         // recommended는 직접 과목 객체 배열입니다
         const courseNames = recommended.map(course => course.name).join(', ');
 
+        // IP 주소 조회 (외부 서비스 사용)
+        let ipAddress = 'Unknown';
+        try {
+          const ipResponse = await fetch('https://api.ipify.org?format=json', {
+            method: 'GET',
+            timeout: 3000 // 3초 타임아웃
+          });
+          if (ipResponse.ok) {
+            const ipData = await ipResponse.json();
+            ipAddress = ipData.ip;
+          }
+        } catch (ipError) {
+          console.warn('IP 주소 조회 실패:', ipError);
+          // IP 조회 실패 시 계속 진행
+        }
+
         // 사용자 기기 정보 수집
         const deviceInfo = {
           userAgent: navigator.userAgent,
@@ -422,6 +438,8 @@
           interaction: answers.interaction,
           recommendedCount: recommended.length,
           recommendedCourses: courseNames,
+          // IP 주소 추가
+          ipAddress: ipAddress,
           // 기기 정보 추가
           userAgent: deviceInfo.userAgent,
           platform: deviceInfo.platform,

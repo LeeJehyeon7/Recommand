@@ -40,9 +40,6 @@ function doPost(e) {
     // POST 데이터 파싱
     const data = JSON.parse(e.postData.contents);
 
-    // 요청자의 IP 주소 가져오기 (Google Apps Script에서 제공)
-    const ipAddress = e.parameter.userip || 'Unknown';
-
     // 데이터 행 추가
     sheet.appendRow([
       new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
@@ -53,7 +50,7 @@ function doPost(e) {
       data.interaction === 'Y' ? '예' : data.interaction === 'N' ? '아니오' : '상관없음',
       data.recommendedCount || 0,
       data.recommendedCourses || '',
-      ipAddress,
+      data.ipAddress || 'Unknown',  // 클라이언트에서 전송한 IP 주소 사용
       data.userAgent || '',
       data.platform || '',
       data.language || '',
