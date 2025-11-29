@@ -35,7 +35,10 @@
         </div>
         <div class="form-group">
           <label for="studentId">학번</label>
-          <input type="text" name="studentId" id="studentId" placeholder="예: 20240001" required>
+          <input type="text" name="studentId" id="studentId" placeholder="예: 20240001"
+                 pattern="[0-9]{4,8}"
+                 inputmode="numeric"
+                 required>
         </div>
       </div>
     </fieldset>
