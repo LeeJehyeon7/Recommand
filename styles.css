@@ -21,9 +21,9 @@ body {
   text-align: center;
   margin-bottom: 40px;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #ff9966 0%, #ffb84d 100%);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 10px 30px rgba(255, 153, 102, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -168,8 +168,8 @@ fieldset:hover {
 
 .form-group input[type="text"]:focus {
   outline: none;
-  border-color: #7c3aed;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  border-color: #ff9966;
+  box-shadow: 0 0 0 3px rgba(255, 153, 102, 0.1);
 }
 
 /* ?�디??버튼 그룹 */
@@ -227,10 +227,10 @@ fieldset:hover {
 }
 
 .radio-label input[type="radio"]:checked + .radio-custom {
-  border-color: #7c3aed;
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  border-color: #ff9966;
+  background: linear-gradient(135deg, #ff9966 0%, #ffb84d 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 153, 102, 0.25);
 }
 
 /* ?�택???�디??버튼??grade?�?level 모두 ?�색?�로 */
@@ -275,10 +275,10 @@ fieldset:hover {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
-  border-color: #7c3aed;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, rgba(167, 139, 250, 0.12) 100%);
-  color: #7c3aed;
-  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.2);
+  border-color: #ff9966;
+  background: linear-gradient(135deg, rgba(255, 153, 102, 0.12) 0%, rgba(255, 184, 77, 0.12) 100%);
+  color: #ff9966;
+  box-shadow: 0 2px 6px rgba(255, 153, 102, 0.2);
 }
 
 legend {
@@ -319,8 +319,8 @@ select:hover {
 
 select:focus {
   outline: none;
-  border-color: #7c3aed;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  border-color: #ff9966;
+  box-shadow: 0 0 0 3px rgba(255, 153, 102, 0.1);
 }
 
 input[type="checkbox"],
@@ -329,7 +329,7 @@ input[type="radio"] {
   cursor: pointer;
   width: 18px;
   height: 18px;
-  accent-color: #7c3aed;
+  accent-color: #ff9966;
 }
 
 /* ?�출 버튼 */
@@ -338,19 +338,19 @@ button[type="submit"] {
   cursor: pointer;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #ff9966 0%, #ffb84d 100%);
   color: white;
   font-weight: 600;
   padding: 14px 24px;
   font-size: 1.05rem;
   margin-top: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 153, 102, 0.25);
 }
 
 button[type="submit"]:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 6px 20px rgba(255, 153, 102, 0.35);
 }
 
 button[type="submit"]:active {
@@ -440,7 +440,7 @@ button[type="submit"]:active {
 }
 
 .result-summary strong {
-  color: #7c3aed;
+  color: #ff9966;
   font-weight: 600;
 }
 
@@ -455,8 +455,8 @@ button[type="submit"]:active {
 }
 
 .course-card:hover {
-  border-color: #7c3aed;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+  border-color: #ff9966;
+  box-shadow: 0 4px 12px rgba(255, 153, 102, 0.15);
   transform: translateY(-2px);
 }
 
@@ -481,12 +481,12 @@ button[type="submit"]:active {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #ff9966 0%, #ffb84d 100%);
   color: white;
   font-weight: 700;
   font-size: 1.1rem;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 2px 4px rgba(255, 153, 102, 0.3);
 }
 
 .course-title-section {
@@ -639,7 +639,7 @@ button[type="submit"]:active {
   padding: 6px 12px;
   border-radius: 999px;
   background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
-  color: #5b21b6;
+  color: #ff7733;
   font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid #c7d2fe;
@@ -672,7 +672,7 @@ button[type="submit"]:active {
 .loading {
   text-align: center;
   padding: 40px;
-  color: #7c3aed;
+  color: #ff9966;
   font-weight: 500;
 }
 
@@ -691,15 +691,15 @@ button[type="submit"]:active {
 .course-description {
   margin-top: 16px;
   padding: 16px;
-  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 5%, #fff 100%);
-  border-left: 4px solid #7c3aed;
+  background: linear-gradient(135deg, #fff5f0 0%, #ffe8d9 5%, #fff 100%);
+  border-left: 4px solid #ff9966;
   border-radius: 8px;
 }
 
 .description-label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #7c3aed;
+  color: #ff9966;
   margin-bottom: 8px;
 }
 
@@ -736,7 +736,7 @@ button[type="submit"]:active {
 
 .course-link {
   font-size: 0.85rem;
-  color: #7c3aed;
+  color: #ff9966;
   text-decoration: none;
   word-break: break-all;
   transition: all 0.2s ease;
@@ -747,9 +747,9 @@ button[type="submit"]:active {
 }
 
 .course-link:hover {
-  color: #5b21b6;
-  background: #f5f3ff;
-  border-color: #c4b5fd;
+  color: #ff7733;
+  background: #fff5f0;
+  border-color: #ffcc99;
   text-decoration: underline;
 }
 
